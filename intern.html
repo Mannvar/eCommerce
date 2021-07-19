@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+        <link rel="stylesheet" href="style1.css">
+        <title>Intern</title>
+       
+    </head>
+    <body>
+
+        <div class="htform">
+            <form onsubmit="return validation()" name="google-sheet" method="POST">
+                <h2>Buy</h2>
+               
+                <input type="text" id="name" name="name" placeholder="Full Name"><br>
+                <span id="errorname" style="color: red"></span>
+                <input type="email" id="mail" name="mail" placeholder="E-mail"><br>
+                <span id="errormail" style="color: red"></span>
+                <input type="number" id="number" name="number" placeholder="Contact number"><br>
+                <span id="errornumber" style="color: red"></span>
+                <input type="text" id="address" name="address" placeholder="Address"><br>
+                <span id="erroraddress" style="color: red"></span>
+                <select name="quantity" required>
+                    <option>--Quantity--</option>
+                    <option>1pair</option>
+                    <option>2pair</option>
+                    <option>3pair</option>
+                    <option>more than 3</option>
+                    </select><br>
+                   
+                <button type="submit">Proceed</button>
+                <button type="reset">Refresh</button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            function validation(){
+                var name=document.getElementById('name').value;
+                var email=document.getElementById('mail').value;
+                var contact=document.getElementById('number').value;
+                var address=document.getElementById('address').value;
+                
+                var namecheck=/^[A-Za-z]{3,30}$/;
+                var emailcheck=/^[A-Za-z_0-9.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3,9}$/;
+                var numbercheck=/^[6789][0-9]{9}$/;
+                var addcheck=/^[A-Za-z_0-9./-]{10,}$/;
+                if(namecheck.test(name)){
+                    document.getElementById('errorname').innerHTML="";
+                }
+                else{
+                    document.getElementById('errorname').innerHTML="*Inavlid Name";
+                    return false;
+                }
+                if(emailcheck.test(email)){
+                    document.getElementById('errormail').innerHTML="";
+                }
+                else{
+                    document.getElementById('errormail').innerHTML="*Inavlid Mail";
+                    return false;
+                }
+                if(numbercheck.test(contact)){
+                    document.getElementById('errornumber').innerHTML="";
+                }
+                else{
+                    document.getElementById('errornumber').innerHTML="*Inavlid Number";
+                    return false;
+                }
+                if(addcheck.test(address)){
+                    document.getElementById('erroraddress').innerHTML="";
+                }
+                else{
+                    document.getElementById('erroraddress').innerHTML="*Inavlid Number";
+                    return false;
+                }
+
+            }
+        </script>
+        <script type="text/javascript">
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbySH36eyHLO5RFK_A5bVq7iLxxBUU6Emo0uk5ZC1Gw7p2sWuV7j1BiN18bNQuPUKwgw1g/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Successfully Registered,We will contact you soon"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          
+        </script>
+
+    </body>
+</html>
