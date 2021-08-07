@@ -232,6 +232,11 @@ padding:10px;
 font-size: 15px;
 font-family: cosmic,sans-serif;
 }
+.feed{
+    padding: 50px;
+    background-image: url('review.jpg');
+    background-size: cover;
+}
 footer{
   background-color: #99A3A4;
   padding:50px;
