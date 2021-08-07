@@ -175,7 +175,7 @@ integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0Vx
 <div class="feed">
     <h2>WRITE A REVIEW</h2>
     <div class="feed-form">
-        <form name="submit-googlesheet1" method="post">
+        <form name="google-sheets" method="POST">
             <input type="text" name="Name" placeholder="Name"><br>
             <input type="number" name="Email" placeholder="Contact Number"><br>
             <input type="email" name="Number" placeholder="Email Id"><br>
@@ -185,18 +185,8 @@ integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0Vx
          </form>
     </div>
 </div>    
-<script type="text/javascript">
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyiNVIgKvD0gXzcB_aeQLFVjaX79LVuYoPjp_TYApsNMvYGDvarHPB-YbiDBhBJ_qySLw/exec'
-            const form = document.forms['submit-googlesheet1']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..!"))
-                .catch(error => console.error('Error!', error.message))
-            })
-</script>
-</body>
+
+
     <footer>
         <div class="footer-logo">
             <a href="#"><img src="beads.png" alt="Logo"></a>
@@ -229,4 +219,17 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbyiNVIgKvD0gXzcB_aeQL
             <hr>
             <p>Copyright &copy; 2021 Manish Reddy.All rights reserved</p>
         </footer>
+        <!--Review form-->
+        <script type="text/javascript">
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzFuPYl1PDEYynlgK4AzjGKfbW-cyiN_f9wxzrkO1G8C0wJWncyE4Xgvnl5tPMZPZi2/exec'
+          const form = document.forms['google-sheets']
+        
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => alert("Successfully Reviewed"))
+              .catch(error => console.error('Error!', error.message))
+          })
+        </script>
+        </body>
 </html>
