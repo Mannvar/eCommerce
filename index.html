@@ -12,9 +12,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
 
         <link rel="stylesheet" href="index.css">
-        <script type="text/javascript">
+       <!--<script type="text/javascript">
         alert("!Site under Development    -> You Can Buy the products only <-")
-        </script>
+        </script>-->
 
     </head>
     <body>
@@ -175,15 +175,27 @@ integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0Vx
 <div class="feed">
     <h2>WRITE A REVIEW</h2>
     <div class="feed-form">
-        <form>
-            <input type="text" name="" placeholder="Name"><br>
-            <input type="email" name="" placeholder="Email Id"><br>
-            <input type="number" name="" placeholder="Contact Number"><br>
-            <textarea rows="5" cols="7" name="" placeholder="Write Your Review"></textarea><br>
+        <form name="submit-googlesheet1" method="post">
+            <input type="text" name="Name" placeholder="Name"><br>
+            <input type="number" name="Email" placeholder="Contact Number"><br>
+            <input type="email" name="Number" placeholder="Email Id"><br>
+            
+            <textarea rows="5" cols="7" name="Review" placeholder="Write Your Review"></textarea><br>
             <button type="submit">Submit</button>
          </form>
     </div>
 </div>    
+<script type="text/javascript">
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyiNVIgKvD0gXzcB_aeQLFVjaX79LVuYoPjp_TYApsNMvYGDvarHPB-YbiDBhBJ_qySLw/exec'
+            const form = document.forms['submit-googlesheet1']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+</script>
 </body>
     <footer>
         <div class="footer-logo">

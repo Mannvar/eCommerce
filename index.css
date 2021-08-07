@@ -237,6 +237,43 @@ font-family: cosmic,sans-serif;
     background-image: url('review2.jpg');
     background-size: cover;
 }
+.feed h2{
+    color: whitesmoke;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.feed .feed-form {
+    text-align: center;
+}
+.feed .feed-form form{
+ padding: 20px;
+}
+.feed .feed-form form input{
+    width: 30%;
+    margin: 10px;
+    padding:8px;
+    outline:none;
+    border: none;
+}
+.feed .feed-form form textarea{
+    width: 30%;
+    margin: 10px;
+    padding:8px;
+    outline:none;
+    border: none;
+}
+.feed .feed-form form button{
+width: 30%;
+margin: 10px;
+padding:8px;
+outline:none;
+border: none;
+background-color: purple;
+color:whitesmoke;
+border-radius: 5px;
+}
 footer{
   background-color: #99A3A4;
   padding:50px;
