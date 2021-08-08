@@ -292,6 +292,32 @@ font-family: cosmic,sans-serif;
 text-align: center;
 line-height: 22px;
 }
+.contact_container{
+    padding:100px;
+}
+.contact_container h2{
+    color:orange ;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: cosmic,sans-serif;
+
+}
+.contact_container .G_map{
+    border:6px solid rgb(160, 77, 94);
+}
+.contact_container .Contact_content{
+    padding: 20px;
+}
+.contact_container .Contact_content p{
+    padding:10px;
+    font-size: 13px;
+    font-family: cosmic,sans-serif;
+    
+    line-height: 22px;
+}
+
 footer{
   background-color: #99A3A4;
   padding:50px;
