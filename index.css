@@ -274,6 +274,24 @@ background-color: purple;
 color:whitesmoke;
 border-radius: 5px;
 }
+.about_us{
+    padding: 100px;
+}
+.about_us h2{
+    color: whitesmoke;
+    font-size: 35px;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: cosmic,sans-serif;
+}
+.about_us p{
+    padding:10px;
+font-size: 13px;
+font-family: cosmic,sans-serif;
+text-align: center;
+line-height: 22px;
+}
 footer{
   background-color: #99A3A4;
   padding:50px;
