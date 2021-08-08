@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Beads and Crystals</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+
+        <link rel="stylesheet" href="index.css">
+       <!--<script type="text/javascript">
+        alert("!Site under Development    -> You Can Buy the products only <-")
+        </script>-->
+
+    </head>
+    <body>
+        <nav class="nav nav_top">
+            <div class="logo">
+                <a href=""><img src="beads.png" width="140"></a>
+            </div>
+            <div class="nav_side">
+                <a href="about.html">About Us</a>
+                <a href="">Services</a>
+                <a href="">Contact</a>
+                <a href="">Login/Register</a>
+            </div>
+            </nav>
+            <!-- Feed-->
+            <div class="feed">
+                <h2>WRITE A REVIEW</h2>
+                <div class="feed-form">
+                    <form name="google-sheets" method="POST">
+                        <input type="text" name="Name" placeholder="Name"><br>
+                        <input type="number" name="Email" placeholder="Contact Number"><br>
+                        <input type="email" name="Number" placeholder="Email Id"><br>
+                        
+                        <textarea rows="5" cols="7" name="Review" placeholder="Write Your Review"></textarea><br>
+                        <button type="submit">Submit</button>
+                     </form>
+                </div>
+            </div>    
+            
+            
+                <footer>
+                    <div class="footer-logo">
+                        <a href="#"><img src="beads.png" alt="Logo"></a>
+                    </div>
+                    <div class="pages">
+                        <h3>Pages</h3>
+                        <a href="about.html">About</a>|
+                        <a href="#">Services</a>|
+                        <a href="#">Login</a>|
+                        <a href="#">Sign Up</a>
+                    </div>
+                    <div class="doc">
+                        <h3>Documents</h3>
+                        <a href="#">Privacy Policy</a>|
+                        <a href="#">Term</a>|
+                        <a href="#">Refund</a>
+                    </div>
+                    <div class="social">
+                        <h3>Follow Us</h3>
+                        <a href="https://www.instagram.com/">Instagaram</a>|
+                        <a href="https://www.facebook.com/">FaceBook</a>|
+                        <a href="https://twitter.com/?lang=en">Twitter</a>
+                        </div>
+                        <div class="contact">
+                            <h3>Contact Us</h3>
+                            <a href="https://api.WhatsApp.com/send?phone:+918106225284">WhatsApp</a>|
+                            <a href="tel: +918106225284">Gmail</a>|
+                            <a href="mailto:manish18200011@gmail.com">Phone</a>
+                        </div>
+                        <hr>
+                        <p>Copyright &copy; 2021 Manish Reddy.All rights reserved</p>
+                    </footer>
+                    <!--Review form-->
+                    <script type="text/javascript">
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFuPYl1PDEYynlgK4AzjGKfbW-cyiN_f9wxzrkO1G8C0wJWncyE4Xgvnl5tPMZPZi2/exec'
+                      const form = document.forms['google-sheets']
+                    
+                      form.addEventListener('submit', e => {
+                        e.preventDefault()
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                          .then(response => alert("Successfully Reviewed"))
+                          .catch(error => console.error('Error!', error.message))
+                      })
+                    </script>
+                    </body>
+            </html>
